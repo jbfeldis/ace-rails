@@ -12,7 +12,7 @@ module Ace
       @@tmp_file = File.join @@tmp_base, @@ace_version_file
       @@tmp_src_base = File.join @@tmp_base, "ace-#{@@ace_version}", "src"
       
-      @@target_src = "public/javascripts/ace"
+      @@target_src = "app/assets/javascripts/ace"
       
       class_option :download, :type => :boolean, :default => true, :desc => "Download and install ACE (#{@@ace_version}) to #{@@target_src}."
       class_option :stylesheet, :type => :boolean, :default => true, :desc => "Creates a default stylesheet and includes it to the application layout"
@@ -39,7 +39,7 @@ module Ace
       def copy_stylesheet
         return unless options.stylesheet?
         
-        copy_file "ace-rails.css", "public/stylesheets/ace-rails.css"
+        copy_file "ace-rails.css", "app/assets/stylesheets/ace-rails.css"
         
         application_layout = File.expand_path('app/views/layouts/application.html.erb')
         stylesheet_tag = "\n  <%= stylesheet_link_tag    '/stylesheets/ace-rails.css' %>"
