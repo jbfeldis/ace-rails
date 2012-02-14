@@ -23,7 +23,7 @@ module Ace
     window.ace_editors['#{id}'] = ace.edit('#{id}');
     #{theme_setter}
     var #{mode_class} = require("ace/mode/#{mode}").Mode;
-    editor.getSession().setMode(new #{mode_class}());
+    window.ace_editors['#{id}'].getSession().setMode(new #{mode_class}());
   };
 </script>
 HTML
