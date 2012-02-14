@@ -18,6 +18,8 @@ module Ace
 </div>
 <script type='text/javascript'>
   window.onload = function() {
+    if (window['ace_editors'] === undefined) window.ace_editors = [];
+    
     window.ace_editors['#{id}'] = ace.edit('#{id}');
     #{theme_setter}
     var #{mode_class} = require("ace/mode/#{mode}").Mode;
