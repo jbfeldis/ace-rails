@@ -9,7 +9,7 @@ module Ace
 
           mode_class = "#{mode}_mode".camelize
 
-          theme_setter = theme ? "editor.setTheme('ace/theme/#{theme}');" : ""
+          theme_setter = theme ? "window.ace_editors['#{id}'].setTheme('ace/theme/#{theme}');" : ""
 
           output = <<HTML
 <div class='editor_container'>
