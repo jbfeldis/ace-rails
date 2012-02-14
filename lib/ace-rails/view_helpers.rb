@@ -22,7 +22,7 @@ module Ace
 #{theme_script_tag}
 <script type='text/javascript'>
   window.onload = function() {
-    var editor = ace.edit('#{id}');
+    window.ace_editors['#{id}'] = ace.edit('#{id}');
     #{theme_setter}
     var #{mode_class} = require("ace/mode/#{mode}").Mode;
     editor.getSession().setMode(new #{mode_class}());
