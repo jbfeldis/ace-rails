@@ -13,14 +13,12 @@ module Ace
 
           output = <<HTML
 <div class='editor_container'>
-  <pre id='#{id}'>#{options[:content]}</pre>
+  <pre id='#{id}'>#{ h options[:content]}</pre>
   <div class='editor_footer'></div>
 </div>
 <script type='text/javascript'>
   $(function(){
-  //window.onload = function() {
-    if (window['ace_editors'] === undefined) window.ace_editors = [];
-    
+    if (window['ace_editors'] === undefined) window.ace_editors = {};
     window.ace_editors['#{id}'] = ace.edit('#{id}');
     #{theme_setter}
     var #{mode_class} = require("ace/mode/#{mode}").Mode;
